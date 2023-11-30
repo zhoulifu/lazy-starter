@@ -49,8 +49,16 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, { "c_sharp" })
-      opts.context_commentstring.config.c_sharp = { __default = "// %s", __multiline = "/* %s */" }
     end,
+  },
+
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    opts = {
+      languages = {
+        c_sharp = { __default = "// %s", __multiline = "/* %s */" },
+      },
+    },
   },
 
   {
