@@ -1,3 +1,5 @@
+local cmp = require("cmp")
+
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -61,6 +63,15 @@ return {
         groups = {
           label = "Folded",
         },
+      },
+    },
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      mapping = {
+        ["<Tab>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true },
       },
     },
   },
