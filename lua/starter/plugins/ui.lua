@@ -13,7 +13,7 @@ return {
     opts = {
       draw = {
         animation = function()
-          return 10
+          return 5
         end,
       },
     },
