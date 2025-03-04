@@ -10,7 +10,7 @@ local function lazy_init()
       "clone",
       "--filter=blob:none",
       "https://github.com/folke/lazy.nvim.git",
-      "--branch=stable",
+      "--branch=v10.3.1",
       lazypath,
     }
   end
