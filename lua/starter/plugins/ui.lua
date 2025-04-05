@@ -1,39 +1,29 @@
 return {
   {
-    "rcarriga/nvim-notify",
-    opts = {
-      stages = "fade",
-    },
-  },
-
-  { "lukas-reineke/indent-blankline.nvim", enabled = false },
-
-  {
-    "echasnovski/mini.indentscope",
-    opts = {
-      draw = {
-        animation = function()
-          return 5
-        end,
-      },
-    },
-  },
-
-  {
     "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        groups = {
-          items = {
-            require("bufferline.groups").builtin.pinned:with { icon = "" },
-          },
+    opts = function(_, opts)
+      opts.options.groups = {
+        items = {
+          require("bufferline.groups").builtin.pinned:with { icon = "" },
         },
-      },
-    },
+      }
+
+      if (vim.g.colors_name or ""):find("catppuccin") then
+        opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+      end
+    end,
   },
 
   {
     "LazyVim/LazyVim",
+    dependencies = {
+      "catppuccin/nvim",
+      opts = {
+        background = {
+          dark = "frappe",
+        },
+      },
+    },
     opts = {
       colorscheme = "catppuccin",
     },
