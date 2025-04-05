@@ -1,5 +1,3 @@
-local cmp = require("cmp")
-
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -10,37 +8,6 @@ return {
         last_modified = { enabled = false },
         created = { enabled = false },
       },
-    },
-    keys = function()
-      return {
-        {
-          "<leader>e",
-          function()
-            require("neo-tree.command").execute { toggle = true, dir = starter.current_workspace() }
-          end,
-          desc = "Explorer NeoTree (root dir)",
-        },
-      }
-    end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      { "JoosepAlviste/nvim-ts-context-commentstring" },
-    },
-    opts = {
-      context_commentstring = {
-        enable = true,
-        config = {},
-      },
-    },
-  },
-
-  {
-    "lewis6991/gitsigns.nvim",
-    opts = {
-      attach_to_untracked = false,
     },
   },
 
@@ -68,11 +35,9 @@ return {
   },
 
   {
-    "hrsh7th/nvim-cmp",
+    "saghen/blink.cmp",
     opts = {
-      mapping = {
-        ["<Tab>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true },
-      },
+      keymap = { preset = "super-tab" },
     },
   },
 }
