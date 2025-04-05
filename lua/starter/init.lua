@@ -10,7 +10,7 @@ local function lazy_init()
       "clone",
       "--filter=blob:none",
       "https://github.com/folke/lazy.nvim.git",
-      "--branch=v10.3.1",
+      "--branch=v11.17.1",
       lazypath,
     }
   end
@@ -22,7 +22,7 @@ function M.setup(opts)
   local _opts = opts or {}
   local lazydefaults = {
     spec = {
-      { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+      { "LazyVim/LazyVim", tag = "v14.14.0", import = "lazyvim.plugins" },
       { import = "starter.plugins" },
 
       unpack(table.removekey(_opts, "spec") or {}),
@@ -30,6 +30,7 @@ function M.setup(opts)
     lockfile = starter.path("lazy-lock.json"),
     defaults = {
       lazy = true,
+      version = false,
     },
     ui = {
       border = "shadow",

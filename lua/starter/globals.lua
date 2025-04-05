@@ -11,7 +11,7 @@ _G.starter = {
   end,
 
   current_workspace = function()
-    return require("lazyvim.util").get_root()
+    return require("lazyvim.util").root.get()
   end,
 }
 
