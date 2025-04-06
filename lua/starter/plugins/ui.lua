@@ -28,4 +28,19 @@ return {
       colorscheme = "catppuccin",
     },
   },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        component_separators = { left = "|", right = "|" },
+      },
+      sections = {
+        lualine_x = {
+          "encoding",
+          "fileformat",
+        },
+      },
+    },
+  },
 }
